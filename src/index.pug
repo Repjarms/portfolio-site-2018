@@ -1,6 +1,27 @@
 html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='main.css')
   body
-    p hello world
+    header this is the header
+    section#hero.container
+      div.inner-content
+        p one
+        p two
+        p three
+    section#info.container
+      div.inner-content
+        p one
+        p two
+        p three
+    section#project.container
+      div.inner-content
+        p this is the projet list
+    section#game.container
+      div.inner-content
+        div#gamebox.gamebox
+          div#gamebox-overlay.gamebox-overlay
+            button#start-button
+              p Start Game
+    footer this is the footer
     script(src='main.bundle.js')

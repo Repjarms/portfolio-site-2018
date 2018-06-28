@@ -1,3 +1,68 @@
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+}
+
+#hero {
   background: tomato;
+}
+
+#info {
+  background: #E5E2D1;
+}
+
+#project {
+
+}
+
+#game {
+  background: #B5B6AB;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.inner-content {
+  grid-column-start: 2;
+  grid-column-end: 8;
+}
+
+.hidden {
+  display: none;
+}
+
+.gamebox {
+  position: relative;
+  background: #5F6443;
+  padding: 30vh 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gamebox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.game-ball {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  background: black;
+  border-radius: 50%;
 }
