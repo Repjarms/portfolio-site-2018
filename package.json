@@ -1,0 +1,36 @@
+{
+  "name": "portfolio-site-2018",
+  "version": "1.0.0",
+  "description": "A portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./config/webpack.dev.config.js",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./config/webpack.prod.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "site",
+    "jeff",
+    "arn"
+  ],
+  "author": "Jeff Arn",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "extract-loader": "^2.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.0",
+    "pug": "^2.0.3",
+    "pug-html-loader": "^1.1.5",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
+  }
+}
