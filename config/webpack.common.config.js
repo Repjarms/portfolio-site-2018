@@ -1,5 +1,4 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const srcPath = path.resolve(__dirname, '..', 'src');
@@ -17,9 +16,13 @@ module.exports = {
       {
         test: /\.pug$/,
         use: [
-          { loader: 'file-loader', options: {
-            name: '[name].html',
-          } },
+          {
+            loader: 'file-loader',
+            options:
+            {
+              name: '[name].html',
+            },
+          },
           { loader: 'extract-loader' },
           { loader: 'html-loader' },
           { loader: 'pug-html-loader' },
@@ -30,6 +33,15 @@ module.exports = {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
         ],
       },
     ],
