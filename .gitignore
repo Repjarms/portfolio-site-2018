@@ -62,3 +62,7 @@ typings/
 
 # builds
 dist/
+
+# vim swap files
+*.swp
+*.swo
