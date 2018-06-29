@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const pugData = require('../src/content/content');
 
 const srcPath = path.resolve(__dirname, '..', 'src');
 const distPath = path.resolve(__dirname, '..', 'dist');
@@ -25,7 +26,13 @@ module.exports = {
           },
           { loader: 'extract-loader' },
           { loader: 'html-loader' },
-          { loader: 'pug-html-loader' },
+          {
+            loader: 'pug-html-loader',
+            options:
+            {
+              data: pugData,
+            },
+          },
         ],
       },
       {
