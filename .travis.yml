@@ -18,7 +18,7 @@ install:
 script:
   - npm test
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-  docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD",
-  docker push repjarms/portfolio-site-2018
+- if [ "$TRAVIS_BRANCH" == "master" ]; then
+  docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+  docker push repjarms/portfolio-site-2018;
   fi
