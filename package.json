@@ -4,12 +4,12 @@
   "description": "A portfolio site",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "start:dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./config/webpack.dev.config.js",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./config/webpack.prod.config.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "validate": "npm ls",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=production ./node_modules/jest/bin/jest.js . --runInBand"
   },
   "keywords": [
     "portfolio",
@@ -20,6 +20,8 @@
   "author": "Jeff Arn",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -29,12 +31,16 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
+    "jest": "^23.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "pre-commit": "^1.2.2",
     "pug": "^2.0.3",
     "pug-html-loader": "^1.1.5",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.21.0",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0",
+    "svg-inline-loader": "^0.8.0",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
@@ -42,7 +48,8 @@
   },
   "pre-commit": [
     "lint",
-    "validate"
+    "validate",
+    "test"
   ],
   "dependencies": {
     "express": "^4.16.3"
