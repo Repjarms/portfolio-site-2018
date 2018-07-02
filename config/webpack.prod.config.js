@@ -18,6 +18,17 @@ module.exports = merge.smart(common, {
           { loader: 'extract-loader' },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
