@@ -1,34 +1,30 @@
 include ./mixins.pug
 
-html
+html(lang="en")
   head
+    title Jeff Arn Portfolio
+    meta(name='description', content='Jeff Arn portfolio site')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='main.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Press+Start+2P')
   body
-    header this is the header
     section#hero
       div.inner-content.hero-content
-        img(src="./pixil-frame-0.png")
+        img(src="./images/hero.png")
         div.hero-announcement
           h1.hero-title JEFF ARN
           h2.hero-subtitle DEVELOPMENT SYSTEM
     section#info.container
       div.inner-content
         h1.heading Included Components
-        p one
-        p two
-        p three
+        each component in content.components
+          +component(component)
     section#project.container
       div.inner-content
         h1.heading Project Catalog
         div.project-list
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
-          +project({ title: 'Computer Vision Product Demo', description: 'test' })
+          each project in content.projects
+            +project(project)
     section#game.container
       div.inner-content
         div#gamebox.gamebox
@@ -37,5 +33,10 @@ html
           div#gamebox-overlay.gamebox-overlay
             button#start-button
               p Start Game
-    footer this is the footer
+    footer.footer
+      div.inner-content
+        h1.heading More Information
+        div.container.footer-link-list
+          each footerLink in content.footerLinks
+            +footerLink(footerLink)
     script(src='main.bundle.js')

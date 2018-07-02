@@ -1,7 +1,23 @@
 mixin project(detailsObj)
   div.project
-    a(href="#")
+    a(href=detailsObj.link target="_blank")
       div.project-inner
-        img(src="https://placemat.imgix.net/placeholder_images/images/000/000/256/original/14726790703_651229abd1_b.jpg?ixlib=rb-1.0.0&w=256&h=256&fm=auto&crop=faces%2Centropy&fit=crop&txt=256%C3%97256&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=da443d99573adda5ac44f7c2ee2f82ce")
+        img(src=detailsObj.image alt=detailsObj.imageAlt)
         h3= detailsObj.title
+        h1= detailsObj.role
         p= detailsObj.description
+
+mixin component(componentObj)
+  div.component
+    img.component-image(src=componentObj.image alt=componentObj.imageAlt)
+    div.component-content
+      h2= '1x ' + componentObj.title
+      ul.component-examples
+        each val in componentObj.examples
+          li= val
+
+mixin footerLink(footerLinkObj)
+  div.footer-link
+    a(href=footerLinkObj.link target="_blank")
+      img(src=footerLinkObj.image alt=footerLinkObj.imageAlt)
+      p= footerLinkObj.title
