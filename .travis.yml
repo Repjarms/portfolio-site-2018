@@ -4,12 +4,21 @@ node_js:
 cache:
   directories:
     "node_modules"
+services:
+  - docker
 before_install:
   - npm i -g npm@6.1.0
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker build -t repjarms/portfolio-site-2018
+  - docker run -d -p 127.0.0.1:80:4567 repjarms/portfolio-site-2018 /bin/sh -c "cd /root/portfolio-site-2018; npm i; npm test"
+  - docker ps -a
 install:
   - npm ci
   - npm run build
 script:
   - npm test
-before_deploy:
-  - npm run build
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD",
+  docker push repjarms/portfolio-site-2018
+  fi
