@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.common.config');
 
 const distPath = path.resolve(__dirname, '..', 'dist');
@@ -24,6 +25,13 @@ module.exports = merge.smart(common, {
       root: rootPath,
       verbose: true,
       dry: false,
+    }),
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
     }),
   ],
 });
