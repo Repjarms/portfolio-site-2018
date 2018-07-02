@@ -9,7 +9,7 @@ mixin project(detailsObj)
 
 mixin component(componentObj)
   div.component
-    img.component-image(src=componentObj.image alt=componentObj.imageAlt)
+    img.component-image(src= componentObj.image alt=componentObj.imageAlt)
     div.component-content
       h2= '1x ' + componentObj.title
       ul.component-examples

@@ -3,7 +3,7 @@ module.exports = {
     components: [
       {
         title: 'Web Development',
-        image: './images/web.svg',
+        image: './images/web.png',
         imageAlt: 'Web Development',
         examples: [
           'React',
@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         title: 'Unity / VR / AR',
-        image: './images/games.svg',
+        image: './images/games.png',
         imageAlt: 'Unity',
         examples: [
           'Unity',
@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         title: 'Embedded Systems / Maker',
-        image: './images/embedded.svg',
+        image: './images/embedded.png',
         imageAlt: 'Embedded Systems',
         examples: [
           'C',
@@ -89,19 +89,19 @@ module.exports = {
     footerLinks: [
       {
         title: 'Email',
-        image: './images/email.svg',
+        image: './images/email.png',
         imageAlt: 'Email',
         link: 'mailto:jeffarn12@gmail.com',
       },
       {
         title: 'Github',
-        image: './images/github.svg',
+        image: './images/github.png',
         imageAlt: 'Github',
         link: 'https://github.com/Repjarms',
       },
       {
         title: 'Codepen',
-        image: './images/codepen.svg',
+        image: './images/codepen.png',
         imageAlt: 'Codepen',
         link: 'https://codepen.io/Repjarms/',
       },
