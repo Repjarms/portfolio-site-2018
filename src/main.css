@@ -63,6 +63,7 @@ svg {
 }
 
 .container {
+  position: relative;
   width: 100%;
   padding: 5% 0;
   display: grid;
@@ -79,6 +80,14 @@ svg {
   border-bottom: 0.2rem solid #4B4B4B;
   font-size: 4rem;
   text-align: center;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .hidden {
@@ -110,6 +119,10 @@ svg {
 .hero-announcement > h1, h2, h3 {
   margin: 0;
   font-weight: 1000;
+}
+
+.hero-announcement > p {
+  color: white;
 }
 
 .hero-title {
