@@ -25,6 +25,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3, p {
@@ -144,9 +145,9 @@ svg {
 
 .component-image {
   min-width: 128px;
-  width: 20%;
+  width: 10vw;
   min-height: 128px;
-  height: 20%;
+  height: 10vw;
 }
 
 .component-content {
