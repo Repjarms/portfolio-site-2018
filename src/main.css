@@ -264,6 +264,11 @@ svg {
   text-align: center;
 }
 
+.footer-link img {
+  width: 10vw;
+  height: 10vw;
+}
+
 /* media queries */
 
 /* tablet */
