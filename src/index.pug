@@ -1,5 +1,4 @@
-include ./mixins.pug
-
+include ./mixins.pug 
 html(lang="en")
   head
     title Jeff Arn Portfolio
@@ -14,17 +13,20 @@ html(lang="en")
         div.hero-announcement
           h1.hero-title JEFF ARN
           h2.hero-subtitle DEVELOPMENT SYSTEM
+          p INSTRUCTION BOOKLET
     section#info.container
       div.inner-content
         h1.heading Included Components
         each component in content.components
           +component(component)
+      p.page-number Page 2
     section#project.container
       div.inner-content
         h1.heading Project Catalog
         div.project-list
           each project in content.projects
             +project(project)
+      p.page-number Page 3
     section#game.container
       div.inner-content
         div#gamebox.gamebox
@@ -33,7 +35,8 @@ html(lang="en")
           div#gamebox-overlay.gamebox-overlay
             button#start-button
               p Start Game
-    footer.footer
+      p.page-number Page 4
+    footer.container.footer
       div.inner-content
         h1.heading More Information
         div.container.footer-link-list

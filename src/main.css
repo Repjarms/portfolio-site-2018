@@ -25,6 +25,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3, p {
@@ -63,6 +64,7 @@ svg {
 }
 
 .container {
+  position: relative;
   width: 100%;
   padding: 5% 0;
   display: grid;
@@ -79,6 +81,14 @@ svg {
   border-bottom: 0.2rem solid #4B4B4B;
   font-size: 4rem;
   text-align: center;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .hidden {
@@ -112,6 +122,10 @@ svg {
   font-weight: 1000;
 }
 
+.hero-announcement > p {
+  color: white;
+}
+
 .hero-title {
   font-size: 7rem;
   color: #BC2969;
@@ -125,16 +139,15 @@ svg {
 .component {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 2rem;
   color: #4B4B4B;
 }
 
 .component-image {
   min-width: 128px;
-  max-width: 128px;
+  width: 10vw;
   min-height: 128px;
-  max-height: 128px;
+  height: 10vw;
 }
 
 .component-content {
@@ -239,75 +252,49 @@ svg {
   background: #E5E2D1;
 }
 
-/*
-.footer .heading {
-color: white;
-border-color: white;
+.footer-link-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
- */
 
-  .footer-link-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.footer-link {
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-link img {
+  width: 10vw;
+  height: 10vw;
+}
+
+/* media queries */
+
+/* tablet */
+@media (min-width: 541px) and (max-width: 1024px) {
+  .project {
+    width: 50%;
+  }
+}
+
+/* mobile portrait */
+@media (min-width: 320px) and (max-width: 540px) {
+  .component {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
-  .footer-link {
-    padding: 1rem;
-    text-align: center;
+  .component-content {
+    margin-left: 0;
   }
 
-  /*
-  .footer-link p {
-  color: white;
+  .project {
+    width: 100%;
+  } 
+
+  .heading {
+    font-size: 2rem;
   }
-   */
-
-  /* media queries */
-
-  /* tablet */
-  @media (min-width: 541px) and (max-width: 1024px) {
-    .project {
-      width: 50%;
-    }
-
-    .component-image {
-      min-width: 64px;
-      max-width: 64px;
-      min-height: 64px;
-      max-height: 64px;
-    }
-  }
-
-  /* mobile portrait */
-  @media (min-width: 320px) and (max-width: 540px) {
-    .component {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .component-image {
-      width: 100%;
-    }
-
-    .component-content {
-      margin-left: 0;
-    }
-
-    .project {
-      width: 100%;
-    } 
-
-    .heading {
-      font-size: 2rem;
-    }
-
-    .component-image {
-      min-width: 128px;
-      max-width: 128px;
-      min-height: 128px;
-      max-height: 128px;
-    }
-
-  }
+}
