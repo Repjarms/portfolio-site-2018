@@ -66,3 +66,9 @@ dist/
 # vim swap files
 *.swp
 *.swo
+
+# http2/TLS keys
+*.key
+*.csr
+*.pem
+*.crt
